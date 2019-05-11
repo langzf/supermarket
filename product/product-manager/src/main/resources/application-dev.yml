@@ -1,0 +1,14 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://39.97.101.222:8761/eureka
+spring:
+  jpa:
+    database: mysql
+    show-sql: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://39.97.101.222:3306/super_market
+    username: root
+    password: langzf_ecs_mysql
+
