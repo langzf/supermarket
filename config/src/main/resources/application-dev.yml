@@ -1,0 +1,21 @@
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/langzf/super-market-config.git
+          username: langzf
+          password: 351412Zhifa
+          search-paths: super-market-config
+          basedir: D:/workspaces-supermaket/supermarket/config/configFile
+eureka:
+  client:
+    service-url:
+      defaultZone: http://39.97.101.222:8761/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
