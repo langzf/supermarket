@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @FeignClient
 @RequestMapping("/product-service")
 public interface ProductService {
@@ -15,4 +17,8 @@ public interface ProductService {
     @GetMapping("/getProductInfoByProductId")
     @ResponseBody
     ProductInfoResponseDTO getProductInfoByProductId(@RequestParam String productId);
+
+    @GetMapping("/getProductCategory")
+    @ResponseBody
+    String getProductCategory();
 }
