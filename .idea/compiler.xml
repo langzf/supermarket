@@ -6,6 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="account" />
+        <module name="account-manager" />
+        <module name="account-service" />
         <module name="common" />
         <module name="config-server" />
         <module name="order" />
@@ -17,6 +20,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="account" target="1.8" />
+      <module name="account-manager" target="1.8" />
+      <module name="account-service" target="1.8" />
       <module name="common" target="1.8" />
       <module name="config-server" target="1.8" />
       <module name="order" target="1.8" />
@@ -29,6 +35,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="account" options="-parameters" />
+      <module name="account-manager" options="-parameters" />
+      <module name="account-service" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="order" options="-parameters" />

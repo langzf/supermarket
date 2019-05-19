@@ -1,0 +1,15 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://39.97.101.222:8761/eureka
+server:
+  port: 8031
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: SUPERMARKET-CONFIG-SERVER-DEV
+  application:
+    name: account-${ENV}
+  profiles: ${ENV}
