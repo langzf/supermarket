@@ -30,7 +30,8 @@ public interface UserService {
      * @param requestDTO
      * @return
      */
-    @PostMapping("/registerUser")
-    ResultDTO<String> registerUser(@RequestParam UserInfoRequestDTO requestDTO);
+    @PostMapping(value = "/registerUser")
+    @ResponseBody
+    ResultDTO<String> registerUser(@RequestBody UserInfoRequestDTO requestDTO);
 
 }

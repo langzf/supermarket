@@ -3,13 +3,14 @@ eureka:
     service-url:
       defaultZone: http://39.97.101.222:8761/eureka
 server:
-  port: 8031
+  port: 8083
 spring:
   cloud:
     config:
       discovery:
         enabled: true
-        service-id: SUPERMARKET-CONFIG-SERVER-DEV
+        service-id: SUPERMARKET-CONFIG-SERVER-LOC
   application:
     name: account-${ENV}
-  profiles: ${ENV}
+  profiles:
+    active: ${ENV}

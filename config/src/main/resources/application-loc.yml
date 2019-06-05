@@ -7,7 +7,7 @@ spring:
           username: langzf
           password: 351412Zhifa
           search-paths: super-market-config
-          basedir: opt/config/supermarket/configFile
+          basedir: D:/workspaces-supermaket/supermarket/config/configFile
 eureka:
   client:
     service-url:

@@ -1,5 +1,7 @@
 package com.imooc.common.dto;
 
+import com.imooc.common.error.BaseErrorCode;
+import com.imooc.common.exception.BaseException;
 import lombok.Data;
 
 /**
@@ -35,10 +37,22 @@ public class ResultDTO<T> {
         this.localMessage = localMessage;
     }
 
+    public ResultDTO(BaseException exception) {
+        this.message=exception.getMessage();
+        this.code= exception.getCode();
+        this.success = false;
+        this.localMessage = exception.getLocalMessage();
+    }
+
     public ResultDTO(T data) {
         this.message=SUCCESS_MESSAGE;
         this.code= SUCCESS_CODE;
+        this.success=true;
         this.data = data;
+    }
+
+
+    public ResultDTO() {
     }
 }
 

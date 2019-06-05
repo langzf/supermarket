@@ -5,6 +5,7 @@ import com.imooc.account.manager.account.entity.UserInfo;
 import com.imooc.account.manager.account.repository.UserInfoRepository;
 import com.imooc.account.manager.account.utils.UUidGenerator;
 import com.imooc.common.dto.ResultDTO;
+import com.imooc.common.error.AccountErrorCode;
 import com.imooc.supermarket.account.dto.UserInfoRequestDTO;
 import com.imooc.supermarket.account.dto.UserInfoResponseDTO;
 import com.imooc.supermarket.account.service.UserService;
@@ -13,6 +14,9 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.Objects;
 
 /**
  * @author: langzhifa
@@ -39,11 +43,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @ApiOperation(value = "注册用户",notes = "registerUser")
-    public ResultDTO<String> registerUser(UserInfoRequestDTO requestDTO) {
+    public ResultDTO<String> registerUser(@RequestBody UserInfoRequestDTO requestDTO) {
+        UserInfo oldUserInfo = userInfoRepository.queryByOpenId(requestDTO.getOpenId());
+
+        if(!Objects.isNull(oldUserInfo)){
+            return new ResultDTO(AccountErrorCode.OPEN_ID_EXISTS);
+        }
         UserInfo userInfo = UserConverter.responseDTOTOUserInfo(requestDTO);
         String userId = UUidGenerator.generateUserUUid();
         userInfo.setId(userId);
         userInfoRepository.save(userInfo);
-        return new ResultDTO<>(userId);
+        return new ResultDTO<String>(userId);
     }
 }

@@ -11,6 +11,6 @@ spring:
     config:
       discovery:
         enabled: true
-        service-id: SUPERMARKET-CONFIG-SERVER-DEV
+        service-id: SUPERMARKET-CONFIG-SERVER-LOC
 server:
   port: 8082

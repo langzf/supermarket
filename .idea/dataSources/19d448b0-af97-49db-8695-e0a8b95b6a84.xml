@@ -1205,7 +1205,7 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="275" parent="231" name="username">
+    <column id="275" parent="231" name="user_name">
       <Position>2</Position>
       <DataType>varchar(32)|0s</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
@@ -1217,7 +1217,7 @@
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="277" parent="231" name="openid">
+    <column id="277" parent="231" name="open_id">
       <Position>4</Position>
       <Comment>微信openid</Comment>
       <DataType>varchar(64)|0s</DataType>
