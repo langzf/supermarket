@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: api-gateway-${ENV}
+  profiles:
+    active: ${ENV}
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: SUPERMARKET-CONFIG-SERVER-LOC
+server:
+  port: 8040
+eureka:
+  client:
+    service-url:
+      defaultZone: http://39.97.101.222:8761/eureka/

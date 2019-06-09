@@ -23,7 +23,8 @@ public interface UserService {
      * @return
      */
     @GetMapping("/queryUser")
-    ResultDTO<UserInfoResponseDTO> queryUserByOpenId(@RequestAttribute("openId") String openId);
+    @ResponseBody
+    ResultDTO<UserInfoResponseDTO> queryUserByOpenId(@RequestParam("openId") String openId);
 
     /**
      *
